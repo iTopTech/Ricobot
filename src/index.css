@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "Raleway", sans-serif;
+  background-color: #ffffff;
+}
+
+.gradient-lr {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(37, 45, 55, 0) 40%, #000000 100%);
+}
+
+.gradient-tb {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, #000000 100%);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
