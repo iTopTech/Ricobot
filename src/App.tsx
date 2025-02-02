@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
+const imgList = [
+  "/images/thumbnail-1.png",
+  "/images/thumbnail-2.png",
+  "/images/thumbnail-3.png",
+  "/images/thumbnail-4.png",
+  "/images/thumbnail-5.png",
+  "/images/thumbnail-6.png",
+];
+
 function App() {
+  const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <div className="min-h-screen w-screen overflow-x-hidden bg-white">
       <div className="relative w-screen h-screen my-[300px]">
@@ -36,6 +46,26 @@ function App() {
           <button className="bg-white mt-8 text-[#09101A] text-sm md:text-base font-black px-6 py-3 rounded-3xl uppercase">
             Learn more
           </button>
+          <div className="flex flex-row gap-16 mt-16 items-end z-20">
+            {imgList.map((img, index) => {
+              return currentIndex === index ? (
+                <div className="bg-transparent gradient-border transition-all cursor-pointer">
+                  <img
+                    src={img}
+                    className="rounded-lg w-48 h-48"
+                    alt={`thumbnail${index}`}
+                  />
+                </div>
+              ) : (
+                <img
+                  src={img}
+                  className="rounded-lg w-32 h-32 cursor-pointer transition-all"
+                  alt={`thumbnail${index}`}
+                  onClick={() => setCurrentIndex(index)}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
       {/* <div className="relative">

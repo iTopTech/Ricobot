@@ -22,12 +22,52 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 75%, #000000 100%);
 }
 
+.gradient-border {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 17px;
+  background: transparent;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 5px;
+  background: conic-gradient(
+    from var(--angle),
+    black 0deg,
+    white 90deg,
+    black 180deg,
+    white 270deg,
+    black 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate 5s linear infinite;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 * {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
