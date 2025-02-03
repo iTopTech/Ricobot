@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Thumbnail from "./components/Thumbnail";
 
 const imgList = [
   "/images/thumbnail-1.png",
@@ -58,29 +59,13 @@ function App() {
           </div>
           <div className="grid grid-cols-3 gap-1 min-h-fit w-full md:w-auto md:flex md:flex-row md:gap-16 mt-12 md:mt-16 justify-center md:justify-normal items-center md:items-end z-20">
             {imgList.map((img, index) => {
-              return currentIndex === index ? (
-                <div
+              return (
+                <Thumbnail
                   key={index}
-                  className="bg-transparent min-w-fit max-w-fit gradient-border cursor-pointer justify-self-center"
-                >
-                  <img
-                    src={img}
-                    className="rounded-md md:rounded-lg w-24 h-24 md:w-48 md:h-48"
-                    alt={`thumbnail${index}`}
-                  />
-                </div>
-              ) : (
-                <div
-                  key={index}
-                  className="flex w-fit min-h-[106px] md:h-auto justify-center items-center justify-self-center"
-                >
-                  <img
-                    src={img}
-                    className="rounded-lg w-24 h-24 md:w-32 md:h-32 cursor-pointer brightness-50"
-                    alt={`thumbnail${index}`}
-                    onClick={() => setCurrentIndex(index)}
-                  />
-                </div>
+                  imgSrc={img}
+                  isSelected={currentIndex === index}
+                  action={() => setCurrentIndex(index)}
+                />
               );
             })}
           </div>
