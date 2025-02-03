@@ -30,7 +30,7 @@ function App() {
           <img
             src="/images/cutout-1.png"
             alt="cutout"
-            className="absolute inset-x-1/2 z-20 w-[40vw] md:w-[28vw] -top-[70px] md:-top-[90px]"
+            className="absolute inset-x-1/2 z-20 w-[40vw] md:w-[27vw] -top-[70px] md:-top-[90px]"
           />
           <div className="gradient-lr z-20"></div>
           <div className="gradient-tb z-20"></div>
