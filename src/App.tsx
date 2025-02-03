@@ -15,7 +15,7 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <div className="min-h-screen w-screen overflow-x-hidden bg-white mb-[50px] md:mb-0">
-      <div className="relative w-screen h-fit md:h-screen my-[50px] md:my-[250px] overflow-visible">
+      <div className="relative w-screen h-fit md:h-screen my-[100px] md:my-[150px] overflow-visible">
         <div
           className="relative md:inline z-10 h-screen overflow-visible bg-no-repeat"
           style={{

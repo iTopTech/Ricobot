@@ -3,7 +3,7 @@ import { MouseEventHandler } from "react";
 interface ThumbnailProps {
   imgSrc: string;
   isSelected: boolean;
-  action: MouseEventHandler<HTMLImageElement> | undefined;
+  action?: MouseEventHandler<HTMLImageElement>;
 }
 
 const Thumbnail = ({ imgSrc, isSelected, action }: ThumbnailProps) => {
